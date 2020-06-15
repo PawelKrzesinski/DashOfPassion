@@ -1,17 +1,101 @@
-.main__content{
-	grid-template-rows: repeat(auto-fit, 160px);
-	grid-template-columns: repeat(auto-fit, 160px);
-	justify-content: center;
-	gap: 20px;
-	margin: 8rem 0 0 0 ;
-	border-top: 0;
+body, html{
+	height: 100%;
+
 }
 
-.images {
-	width: 150px;
-	height: 150px;
-	border: 1px solid gray;
-	box-shadow: 1px 1px 10px 3px gray;
-	border-radius: 455% 35% 455% 35%/ 80px 50px 80px 50px;
-	object-fit: cover;
+
+@media only screen and (min-width: 300px){
+	.content{
+		min-height: 100%;
+	}
+	.spices__background{
+		position: relative;
+		width: 100%;
+		height: 200px;
+		margin-top: 7rem;
+		background-color: black;
+	}
+	.spices__background img{
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.5;
+	}
+	.main__gallery{
+		gap: 2rem;
+		display: grid;
+		grid-template-rows: repeat(auto-fit, 150px);
+		grid-template-columns: repeat(auto-fit, 150px);
+		justify-content: center;
+		margin-top: 3rem;
+		border-top: 0;
+		height: auto;
+		width: 100%;
+		height: 100%;
+	}
+	.images {
+		display: inline-block;
+		width: 150px;
+		height: 150px;
+		border: 1px solid gray;
+		box-shadow: 1px 1px 10px 3px gray;
+		border-radius: 455% 35% 455% 35%/ 80px 50px 80px 50px;
+		object-fit: cover;
+		cursor: pointer;
+	}
+
+}
+
+@media only screen and (min-width: 715px){
+	.main__gallery{
+		grid-template-rows: repeat(auto-fit, 200px);
+		grid-template-columns: repeat(auto-fit, 200px);
+	}
+	.images{
+		width: 200px;
+		height: 200px;
+	}
+}
+
+@media only screen and (min-width: 900px){
+	.main__gallery{
+		grid-template-rows: repeat(auto-fit, 250px);
+		grid-template-columns: repeat(auto-fit, 250px);
+	}
+	.images{
+		width: 250px;
+		height: 250px;
+	}
+}
+
+@media only screen and (min-width: 1200px){
+	.spices__background{
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 1800px){
+	.main__gallery{
+		grid-template-rows: repeat(auto-fit, 400px);
+		grid-template-columns: repeat(auto-fit, 400px);
+	}
+	.images{
+		width: 400px;
+		height: 400px;
+	}
+}
+
+@media only screen and (min-width: 2500px){
+	.main__gallery{
+		margin-left: auto;
+		margin-right: auto;
+		width: 90%;
+	}
+}
+
+@media only screen and (min-width: 3500px){
+	.main__gallery{
+		margin-left: auto;
+		margin-right: auto;
+		width: 75%;
+	}
 }

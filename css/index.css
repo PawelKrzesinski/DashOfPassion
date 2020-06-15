@@ -171,12 +171,13 @@ body {
 		width: 49%;
 		height: 100%;
 	}
-	.display__h3 {
+	.display__links {
 		margin: 0 ;
 		padding-left: 0.5rem;
 		padding-right: 0.5rem;
 		color: white;
 		font-size: 1rem;
+		text-decoration: none;
 	}
 	.fas{
 		color: white;
@@ -285,7 +286,7 @@ body {
 		font-size: 1.5rem;
 	}
 	
-	.display__h3{
+	.display__links{
 		font-size: 1.5rem;
 	}
 	.recipe__container{
@@ -330,6 +331,15 @@ body {
 	}
 }
 @media only screen and (min-width: 1200px){
+	.navbar{
+		top: 0px;
+		display: flex;
+		flex-direction: row;
+	}
+	.logo{
+		width: auto;
+		background-color: transparent;
+	}	
 	.main__content{
 		display: grid;
 		grid-template-columns: repeat(2, 500px);
@@ -363,15 +373,10 @@ body {
 	.fas{
 		font-size: 2.5rem;
 	}
-	.display__buttons:hover .display__h3 {
+	.display__buttons:hover .display__links {
 		border-bottom: 3px solid white !important;
 		animation: button__underline 0.1s linear;
 	}
-	.display__gallery__link button:hover  .display__gallery__link img{
-		font-size: 45rem;
-		filter: blur(8px);
-	}
-
 }
 
 @media only screen and (min-width: 1500px){
@@ -418,7 +423,7 @@ body {
 		padding: 0.7rem 1.2rem;
 		font-size: 1.8rem;
 	}
-	.display__h3{
+	.display__links{
 		font-size: 2rem;
 	}
 	.fas{
@@ -440,5 +445,12 @@ body {
 	}
 	.recipe__description{
 		font-size: 1.4rem;
+	}
+}
+
+@media only screen and (min-width: 2500px){
+	.display__gallery{
+		margin-top: 9rem;
+		width: 70%;
 	}
 }

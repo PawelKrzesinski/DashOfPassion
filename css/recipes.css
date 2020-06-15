@@ -1,0 +1,32 @@
+
+
+.logo{
+	z-index: 1001;
+}
+
+@media only screen and (min-width: 300px){
+	.recipes__main{
+		margin-top: 8rem;
+		display: grid;
+		gap: 20px;
+		grid-template-columns: repeat(2, 150px);
+		grid-template-rows: repeat(auto-fit, 150px);
+		justify-content: center;
+	}
+	.recipes__image__container{
+		width: 150px;
+		height: 150px;
+		background-color: black;
+	}
+	.recipes__topics {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 1;
+	}
+	.recipes__topics:last-child {
+		justify-self: center;
+		align-self: center;
+	}
+
+}
