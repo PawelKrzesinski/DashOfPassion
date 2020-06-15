@@ -1,3 +1,10 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 * {
 	padding: 0;
 	box-sizing: border-box;
@@ -21,48 +28,417 @@ body {
 	width: 100%;
 }
 
-
-.navbar {
-	position: fixed;
-	right: 0;
-	top: 0;
-	background: linear-gradient(65deg, transparent 50%, limegreen 50%);
-	height: 100%;
-	width: 20%;
-
-}
-
-.navbar__buttons__container {
-	margin-top: 3rem;
-	display: flex;
-	flex-direction: column;
-	align-items: flex-end;
-	justify-content: right;
-}
-
-.logo {
-	position: fixed;
-	top: 0;
-	left: 0;
-	background: linear-gradient(30deg, limegreen 30%, lime 70%);
-	padding: 0;
+.footer { 
+	overflow: hidden;
 	width: 100%;
-}
-.logo h1{
-	margin: 0.4rem 0;
-}
-
-.navbar button {
-	width: 7rem;
-	height: 3rem;
-	margin: 0.5rem 2rem 0 0;
-	border: 2px solid lime;
-	background: limegreen;
-	color: white;
-	font-size: 1rem;
-}
-.navbar button:hover {
-	background: lime;
+	height: auto;
+	margin: 0;
+	font-size: 0.8rem;
+	font-weight: 900;
+	display: flexbox;
+	text-align: center;
+	background-color: lightgray;
 	color: black;
+}
 
+
+@keyframes button__underline {
+	0%{border-bottom: 0}
+	100%{border-bottom: 3px solid black}
+}
+
+@media only screen and (min-width: 300px) {
+	.logo{
+		position: fixed;
+		top: 0;
+		left: 0;
+		padding: 0;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		background: rgba(240, 240, 240, 0.8);
+		z-index: 1000;
+	}
+	.logo h1{
+		font-size: 2.3rem;
+		font-family: "Brush Script MT", Brush Script Std, cursive;
+		margin: 0.2rem 0;
+	}	
+	.navbar {
+		display: block;
+		position: fixed;
+		left: 0;
+		top: 64px;
+		height: auto;
+		width: 100%;
+		z-index: 1000;
+	}
+	.navbar__buttons__container {
+		display: flex;
+		flex-direction: row;
+		align-items: flex-end;
+		justify-content: center;
+		background: rgba(240, 240, 240, 0.8);
+		width: 100%;
+	}
+	.navbar button {
+		width: 6rem;
+		height: auto;
+		padding: 0.5rem 0;
+		margin: 0.5rem 0.5rem;
+		border: 0;
+		background-color: transparent;
+		font-size: 1rem;
+	}
+	.navbar button a.active{
+		border-bottom: 3px solid black;
+	}
+	.navbar button a {
+		text-decoration: none;
+		color: initial;
+		
+	}
+	.navbar button a:hover{
+		animation: button__underline 0.5s linear;
+		border-bottom: 3px solid black
+	}
+	.display__gallery{
+		margin-top: 7rem;
+		width: 100%;
+		height: auto;
+		min-height: 400px;
+	}
+	.display__gallery__img--big{
+		background-color: black;
+		position: relative;
+		width: 100%;
+		height: 60%;
+	}
+	.display__gallery__imgs{
+		margin-top: 0.3rem;
+		width: 100%;
+		height: 40%;
+		display: flex;
+	}
+	.display__gallery img {
+		display: block;
+		opacity: 0.4;
+		width: 100%;
+		height: 100%;
+	}
+	#display__first__desc{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	#display__header{
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		text-align: center;
+		color: white;
+		margin: 0;
+	}
+	.display__buttons {
+		position: absolute;
+		top: 50%;
+		right: 0;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		transform: translateY(-50%);
+		background-color: transparent;
+		border: none;
+		cursor: pointer;
+	}
+	.display__gallery__link{
+		background-color: black;
+		position: relative;
+		width: 49%;
+		height: 100%;
+		margin-right: 1%;
+	}
+	.display__recipes__link{
+		background-color: black;
+		position: relative;
+		margin-left: 1%;
+		width: 49%;
+		height: 100%;
+	}
+	.display__h3 {
+		margin: 0 ;
+		padding-left: 0.5rem;
+		padding-right: 0.5rem;
+		color: white;
+		font-size: 1rem;
+	}
+	.fas{
+		color: white;
+		font-size: 1.5rem;
+		margin-right: 1.5rem;
+	}
+	.display__button {
+		padding: 0.5rem 0.5rem;
+		background-color: rgb(220, 145, 10);
+		border: 2px solid white;
+		font-size: 1rem;
+		color: white;
+		cursor: pointer;
+		margin-top: 0.5rem;
+	}
+	.news__container{
+		margin-top: 2rem;
+		margin-left: auto;
+		margin-right: auto;
+		width: 95%;
+		border: 1px solid darkgray;
+		box-shadow: 2px 2px 5px 2px;
+		background: gainsboro;
+	}
+	.news__text{
+		padding: 0.5rem 1rem;
+		font-size: 1rem;
+		text-align: center;
+	}
+	.main__content{
+		margin-top: 2rem;
+		width: 100%;
+		height: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.recipe__container{
+		width: 95%;
+		height: 20rem;
+		border: 1px solid darkgray;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: whitesmoke;
+		box-shadow: 2px 2px 25px 2px;
+		margin-bottom: 2rem;
+	}
+	.recipe__image{
+		width: 100%;
+		height: 65%;
+	}
+	.recipe__image img{
+		border: 0 !important;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.recipe__description{
+		font-size: 1rem;
+		width: 100%;
+		height: 35%;
+	}
+	.recipe__description h5{
+		text-align: justify;
+		margin: 0;
+		padding: 0.4rem 1rem;
+	}
+	.subscribe {
+		margin: 1rem auto;
+		width: 95%;
+		height: 12rem;
+		background: rgb(150, 240, 150);
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.subscribe h3{
+		margin: 1rem 0 0 0;
+		font-size: 1.3rem;
+		text-align: center;
+		padding: 0 0.5rem;
+	}
+	.subscribe input {
+		width: auto;
+		font-size: 1rem;
+		height: 2rem;
+		margin: 1rem 0 0 0;
+	}
+	.subscribe button {
+		font-size: 1.2rem;
+		padding: 0.2rem 0;
+		margin: 1rem 0 0 0;
+		width: 8rem;
+		height: auto;
+		color: black;
+		background: rgba(240, 240, 240, 0.8);
+		border: 0;
+	}
+	
+}
+
+@media only screen and (min-width: 550px){
+	#display__header{
+		font-size: 1.5rem;
+	}
+	
+	.display__h3{
+		font-size: 1.5rem;
+	}
+	.recipe__container{
+		width: 85%;
+	}
+	.fas{
+		font-size: 1.8rem;
+	}
+}
+
+@media only screen and (min-width: 750px) {
+	.news__container{
+		width: 80%;
+	}
+	.recipe__container{
+		height: 30rem;
+		margin: 2rem 0;
+	}
+	.recipe__image{
+		height: 75%;
+	}
+	.recipe__description{
+		height: 25%;
+		font-size: 1.5rem;
+	}
+	.fas{
+		font-size: 2.1rem;
+	}
+}
+@media only screen and (min-width: 900px){
+	.recipe__container{
+		width: 60%;
+		height: 35rem;
+		margin: 2rem 0;
+	}
+	.recipe__image{
+		height: 75%;
+	}
+	.recipe__description{
+		height: 25%;
+		font-size: 1.5rem;
+	}
+}
+@media only screen and (min-width: 1200px){
+	.main__content{
+		display: grid;
+		grid-template-columns: repeat(2, 500px);
+		grid-template-rows: repeat(2, 500px);
+		gap: 50px;
+		justify-content: center;
+		justify-items: center;
+		margin-bottom: 2rem;
+	}
+	.recipe__container{
+		width: 100%;
+		height: 25rem;
+		margin: 2rem 0;
+	}
+	.recipe__image{
+		height: 60%;
+	}
+	.recipe__description{
+		font-size: 1.5rem;
+		padding: 0 2rem;
+		height: 40%;
+	}
+	.subscribe{
+		width: 40%;
+	}
+	.display__button:hover{
+		border-color: rgb(220, 145, 10);
+		color: rgb(220, 145, 10);
+		background-color: transparent;
+	}
+	.fas{
+		font-size: 2.5rem;
+	}
+	.display__buttons:hover .display__h3 {
+		border-bottom: 3px solid white !important;
+		animation: button__underline 0.1s linear;
+	}
+	.display__gallery__link button:hover  .display__gallery__link img{
+		font-size: 45rem;
+		filter: blur(8px);
+	}
+
+}
+
+@media only screen and (min-width: 1500px){
+	.display__gallery{
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		width: 90%;
+		height: auto;
+		margin: 7rem auto 0 auto ;
+	}
+	.display__gallery__imgs{
+		flex-direction: column;
+		width: 33%;
+		height: auto;
+		margin: 0;
+	}
+	.display__gallery__link{
+		display: block;
+		min-height: 50%;
+		height: 50%;
+		width: 100%;
+		margin: 0;
+		border: 3px solid white;
+		border-top: none;
+	}
+	.display__recipes__link{
+		display: block;
+		min-height: 50%;
+		height: 50%;
+		width: 100%;
+		margin: 0;
+		border: 3px solid white;
+		border-bottom: none;
+	}
+	.display__gallery__img--big{
+		width: 67%;
+		height: 100%;
+	}
+	#display__header{
+		font-size: 2.2rem;
+	}
+	.display__button{
+		padding: 0.7rem 1.2rem;
+		font-size: 1.8rem;
+	}
+	.display__h3{
+		font-size: 2rem;
+	}
+	.fas{
+		margin-right: 5rem;
+	}
+	.news__container{
+		width: 60%;
+	}
+	.news__text{
+		font-size: 1.4rem;
+	}
+	.main__content{
+		grid-template-columns: repeat(2, 750px);
+		grid-template-rows: repeat(2, 750px);
+	}
+	.recipe__container{
+		width: 80%;
+		height: 30rem;
+	}
+	.recipe__description{
+		font-size: 1.4rem;
+	}
 }
