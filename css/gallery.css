@@ -5,9 +5,7 @@ body, html{
 
 
 @media only screen and (min-width: 300px){
-	.content{
-		min-height: 100%;
-	}
+
 	.spices__background{
 		position: relative;
 		width: 100%;
@@ -20,6 +18,15 @@ body, html{
 		height: 100%;
 		object-fit: cover;
 		opacity: 0.5;
+	}
+	.spices__background h1{
+		font-size: 1.8rem;
+		text-align: center;
+		color: white;
+		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+		text-shadow: 2px 2px 5px black;
+		transform: translateY(-150%);
+		padding: 0.5rem 1rem;
 	}
 	.main__gallery{
 		gap: 2rem;
@@ -46,6 +53,16 @@ body, html{
 
 }
 
+@media only screen and (min-width: 400px){
+	.spices__background h1{
+		padding: 0.5rem 1.5rem;
+		width: 350px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+}
+
+
 @media only screen and (min-width: 715px){
 	.main__gallery{
 		grid-template-rows: repeat(auto-fit, 200px);
@@ -58,6 +75,11 @@ body, html{
 }
 
 @media only screen and (min-width: 900px){
+	.spices__background h1{
+		width: 550px;
+		transform: translateY(-200%);
+	}
+	
 	.main__gallery{
 		grid-template-rows: repeat(auto-fit, 250px);
 		grid-template-columns: repeat(auto-fit, 250px);
@@ -72,6 +94,11 @@ body, html{
 	.spices__background{
 		height: 300px;
 	}
+	.spices__background h1{
+		padding: 0.5rem 1.5rem;
+		width: 700px;
+		font-size: 2.5rem;
+		
 }
 @media only screen and (min-width: 1800px){
 	.main__gallery{

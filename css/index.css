@@ -1,8 +1,14 @@
+
 input:focus,
 select:focus,
 textarea:focus,
 button:focus {
     outline: none;
+}
+.content{
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 * {
@@ -27,6 +33,7 @@ html{
 body {
 	width: 100%;
 }
+
 
 .footer { 
 	overflow: hidden;
@@ -58,7 +65,7 @@ body {
 		align-items: center;
 		justify-content: center;
 		background: rgba(240, 240, 240, 0.8);
-		z-index: 1000;
+		z-index: 1001;
 	}
 	.logo h1{
 		font-size: 2.3rem;
@@ -73,13 +80,13 @@ body {
 		height: auto;
 		width: 100%;
 		z-index: 1000;
+		background: rgba(240, 240, 240, 0.8);
 	}
 	.navbar__buttons__container {
 		display: flex;
 		flex-direction: row;
 		align-items: flex-end;
 		justify-content: center;
-		background: rgba(240, 240, 240, 0.8);
 		width: 100%;
 	}
 	.navbar button {
@@ -298,6 +305,7 @@ body {
 }
 
 @media only screen and (min-width: 750px) {
+	
 	.news__container{
 		width: 80%;
 	}
@@ -317,6 +325,21 @@ body {
 	}
 }
 @media only screen and (min-width: 900px){
+	.navbar{
+		top: 0px;
+		display: flex;
+		flex-direction: row;
+	}
+	.logo{
+		width: auto;
+		background-color: transparent;	
+	}
+	.logo h1{
+		margin-left: 5rem !important;
+	}
+	.navbar__buttons__container {
+		margin-left: 15rem !important;
+	}
 	.recipe__container{
 		width: 60%;
 		height: 35rem;
@@ -331,15 +354,7 @@ body {
 	}
 }
 @media only screen and (min-width: 1200px){
-	.navbar{
-		top: 0px;
-		display: flex;
-		flex-direction: row;
-	}
-	.logo{
-		width: auto;
-		background-color: transparent;
-	}	
+	
 	.main__content{
 		display: grid;
 		grid-template-columns: repeat(2, 500px);
@@ -380,6 +395,10 @@ body {
 }
 
 @media only screen and (min-width: 1500px){
+	.navbar__buttons__container {
+		margin-left: 10rem !important;
+	}
+		
 	.display__gallery{
 		display: flex;
 		flex-direction: row;
@@ -448,9 +467,39 @@ body {
 	}
 }
 
+
+@media only screen and (min-width: 1800px){
+	.navbar__buttons__container {
+		margin-left: 5rem !important;
+	}
+}
+
 @media only screen and (min-width: 2500px){
 	.display__gallery{
 		margin-top: 9rem;
 		width: 70%;
+	}
+	.subscribe{
+		width: 20%;
+	}
+}
+
+@media only screen and (min-width: 3000px){
+	.news__container{
+		width: 40%;
+	}
+	.news__text{
+		font-size: 1.7rem;
+	}
+	.recipe__container{
+		width: 90%;
+		height: 35rem;
+	}
+	.recipe__image{
+		height: 70%;
+	}
+	.recipe__description{
+		height: 30%;
+		font-size: 1.7rem;
 	}
 }
