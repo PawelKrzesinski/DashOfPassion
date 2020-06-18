@@ -98,7 +98,7 @@ body, html{
 		padding: 0.5rem 1.5rem;
 		width: 700px;
 		font-size: 2.5rem;
-		
+	}
 }
 @media only screen and (min-width: 1800px){
 	.main__gallery{

@@ -2,6 +2,21 @@ const desc = document.querySelectorAll('.recipe__description')
 const descArray = Array.from(desc);
 const copyrights = document.getElementById('copyrights')
 const randomGallery = document.querySelectorAll('.recipe__image')
+const scrollTop = document.getElementById('scroll__top');
+const displayGallery = document.querySelector('.display__gallery')
+let date = new Date;
+let year = date.getFullYear();
+copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`
+
+
+window.addEventListener('scroll', () => {
+	if(displayGallery.getBoundingClientRect().bottom < 500){
+		scrollTop.style.display = 'flex';
+	} else {
+		scrollTop.style.display = 'none';
+	}
+})
+
 
 
 
@@ -52,9 +67,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}) 
 })
 
-let date = new Date;
-let year = date.getFullYear();
-copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`
 
 
 const backgrounds = [
