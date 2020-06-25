@@ -44,7 +44,6 @@ body, html{
 		display: inline-block;
 		width: 150px;
 		height: 150px;
-		border: 1px solid gray;
 		box-shadow: 1px 1px 10px 3px gray;
 		border-radius: 455% 35% 455% 35%/ 80px 50px 80px 50px;
 		object-fit: cover;
