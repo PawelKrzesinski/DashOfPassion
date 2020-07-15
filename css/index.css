@@ -5,11 +5,6 @@ textarea:focus,
 button:focus {
     outline: none;
 }
-.content{
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-}
 
 * {
 	padding: 0;
@@ -21,28 +16,24 @@ html{
 	scroll-behavior: smooth;
 }
 
-body,
-html{
-	min-height: 100% ;
+body{
+	min-height: 100vh;
 	margin: 0;
 	padding: 0;
 	font-family: 'Titillium Web', sans-serif;
 	letter-spacing: 0.1rem;
+	display: flex;
+	flex-direction: column;
 }
-
-body {
-	width: 100%;
-}
-
 
 .footer { 
 	overflow: hidden;
 	width: 100%;
 	height: auto;
-	margin: 0;
+	margin-top: auto;
 	font-size: 0.8rem;
 	font-weight: 900;
-	display: flexbox;
+	display: block;
 	text-align: center;
 	background-color: lightgray;
 	color: black;
@@ -59,35 +50,26 @@ body {
 		position: absolute;
 		top: 0;
 	}
-
-	.logo{
-		position: fixed;
-		top: 0;
-		left: 0;
-		padding: 0;
-		width: 100%;
+	.navbar {
 		display: flex;
+		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		background: rgba(240, 240, 240, 0.8);
+		position: fixed;
+		left: 0;
+		top: 0;
+		height: auto;
+		width: 100%;
 		z-index: 1001;
+		background: rgba(240, 240, 240, 0.9);
+		border-bottom: 1px solid black;
 	}
-	.logo h1{
+	.navbar h1{
 		font-size: 2.3rem;
 		font-family: "Brush Script MT", Brush Script Std, cursive;
 		margin: 0.2rem 0;
+		white-space: nowrap;
 	}	
-	.navbar {
-		display: block;
-		position: fixed;
-		left: 0;
-		top: 64px;
-		height: auto;
-		width: 100%;
-		z-index: 1000;
-		background: rgba(240, 240, 240, 0.8);
-		border-bottom: 1px solid black;
-	}
 	.navbar__buttons__container {
 		display: flex;
 		flex-direction: row;
@@ -107,10 +89,9 @@ body {
 	.navbar button a.active{
 		border-bottom: 3px solid black;
 	}
-	.navbar button a {
+	.navbar a {
 		text-decoration: none;
 		color: initial;
-		
 	}
 	.navbar button a:hover{
 		animation: button__underline 0.5s linear;
@@ -269,7 +250,6 @@ body {
 		font-weight: 100;
 	}
 	.recipe__description h5{
-		text-align: justify;
 		margin: 0;
 		padding: 0 1rem;
 	}
@@ -329,10 +309,7 @@ body {
 		width: 100%;
 		font-size: 1rem;
 	}
-	.fa-arrow-up::before{
-		display: inline-block;
-		width: 75px;
-	}
+
 }
 
 @media only screen and (min-width: 550px){
@@ -352,7 +329,12 @@ body {
 }
 
 @media only screen and (min-width: 750px) {
-	
+	.navbar{
+		flex-direction: row;
+	}
+	.navbar h1{
+		margin-left: 0.5rem
+	}
 	.news__container{
 		width: 80%;
 	}
@@ -371,27 +353,24 @@ body {
 	}
 	.recipe__description h5{
 		font-size: 1rem;
-		padding: 0 2rem;
+		padding: 0 1rem;
 	}
 	.fa-arrow-right{
 		font-size: 2.1rem;
 	}
+	.subscribe{
+		width: 70%;
+	}
+	.fa-arrow-up{
+		font-size: 1.5rem;
+	}
+	.scroll__up p{
+		font-size: 0.8rem;
+	}
 }
 @media only screen and (min-width: 900px){
-	.navbar{
-		top: 0px;
-		display: flex;
-		flex-direction: row;
-	}
-	.logo{
-		width: auto;
-		background-color: transparent;	
-	}
-	.logo h1{
-		margin-left: 5rem !important;
-	}
-	.navbar__buttons__container {
-		margin-left: 15rem !important;
+	.navbar h1{
+		margin-left: 2rem !important;
 	}
 	.recipe__container{
 		width: 60%;
@@ -405,8 +384,14 @@ body {
 		height: 25%;
 		font-size: 1.5rem;
 	}
+	.subscribe{
+		width: 60%;
+	}
 }
 @media only screen and (min-width: 1200px){
+	.navbar h1{
+		margin-left: 5rem !important;
+	}
 	.main__content{
 		display: grid;
 		grid-template-columns: repeat(2, 500px);
@@ -417,8 +402,8 @@ body {
 		margin-bottom: 2rem;
 	}
 	.recipe__container{
-		width: 100%;
-		height: 25rem;
+		width: 500px;
+		height: 500px;
 		margin: 2rem 0;
 	}
 	.recipe__image{
@@ -426,7 +411,6 @@ body {
 	}
 	.recipe__description{
 		font-size: 1.5rem;
-		padding: 0 2rem;
 		height: 40%;
 	}
 	.subscribe{
@@ -459,10 +443,9 @@ body {
 }
 
 @media only screen and (min-width: 1500px){
-	.navbar__buttons__container {
+	.navbar h1 {
 		margin-left: 10rem !important;
 	}
-		
 	.display__gallery{
 		display: flex;
 		flex-direction: row;
@@ -523,12 +506,12 @@ body {
 		font-size: 1.4rem;
 	}
 	.main__content{
-		grid-template-columns: repeat(2, 750px);
-		grid-template-rows: repeat(2, 750px);
+		grid-template-columns: repeat(2, 600px);
+		grid-template-rows: repeat(2, 600px);
 	}
 	.recipe__container{
-		width: 80%;
-		height: 30rem;
+		width: 600px;
+		height:600px;
 	}
 	.recipe__description{
 		font-size: 1.4rem;
@@ -553,6 +536,9 @@ body {
 	}
 	.news__container {
 		margin-top: 5rem;
+	}
+	.subscribe{
+		width: 30%;
 	}
 }
 
