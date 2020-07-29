@@ -1,0 +1,19 @@
+{
+  "name": "dashofpassion",
+  "version": "1.0.0",
+  "description": "Recipe search engine",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PawelKrzesinski/DashOfPassion.git"
+  },
+  "author": "Pawel Krzesinski",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PawelKrzesinski/DashOfPassion/issues"
+  },
+  "homepage": "https://github.com/PawelKrzesinski/DashOfPassion#readme"
+}
