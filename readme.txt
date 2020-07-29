@@ -1,1 +1,1 @@
-Culinary blog that's using nutrition API to calculate calories in each recipe based on ingredient. Languages used are HTML, CSS and Javascript. WORK IN PROGRESS
+Recipe Search engine and a food blog. Choose a category in the recipe section, or type in ingredient you want to use and browse through recipes !
