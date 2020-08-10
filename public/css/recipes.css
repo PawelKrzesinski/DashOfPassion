@@ -122,6 +122,13 @@
 		height: 0 !important;
 		width: 0 !important;
 	}
+	.spinner {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 250px;
+		height: 250px;
+	}
 	.recipes {
 		display: none;
 		grid-template-columns: repeat(auto-fit, 300px);
