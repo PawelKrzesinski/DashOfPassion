@@ -1,109 +1,94 @@
 {
 	"items" : [
 		{
-			
-			"title":"Blue Cheese Creamy Chicken Pasta",
-			"img":"./images/gallery/blue_cheese_creamy_chicken.jpg",
-			"description":""
+			"id":"1",
+			"title":"Chicken pasta in a blue cheese, creamy sauce",
+			"img":"./images/gallery/blue_cheese_creamy_chicken.jpg"
 		},	
 		{
-			
-			"title":"Chilli Lime Sea Bream With Oyster Sauce Bok Choy",
-			"img":"./images/gallery/chilli_lime_seabream.jpg",
-			"description":""
+			"id":"2",
+			"title":"Chilli-Lime Sea Bream With Oyster Sauce Bok Choy",
+			"img":"./images/gallery/chilli_lime_seabream.jpg"
 		},	
 		{
-			
-			"title":"Chinese Five Spice Ribs With Asian Style Bbq Glaze and Butter Kimchi Soba",
-			"img":"./images/gallery/chinese_ribs.jpg",
-			"description":""
+			"id":"3",
+			"title":"Chinese Five Spice Ribs With Asian Style Bbq Glaze, Butter Kimchi Soba and Quickly fried Sesame Cucumber",
+			"img":"./images/gallery/chinese_ribs.jpg"
 		},		
 		{
-			
+			"id":"4",
 			"title":"Cream of Mushrooms",
-			"img":"./images/gallery/cream_of_mushroom.jpg",
-			"description":""
+			"img":"./images/gallery/cream_of_mushroom.jpg"
 		},	
-			{
+		{
+			"id":"5",
 			"title":"Confit Duck Croquettes with Orange Sauce",
-			"img":"./images/gallery/duck_croquettes.jpg",
-			"description":""
+			"img":"./images/gallery/duck_croquettes.jpg"
 		},		
 		{
-			
+			"id":"6",
 			"title":"Eggs Royal",
-			"img":"./images/gallery/eggs_royal.jpg",
-			"description":""
+			"img":"./images/gallery/eggs_royal.jpg"
 		},		
 		{
-			
-			"title":"American Style Pancakes with Berry Maple Syroup",
-			"img":"./images/gallery/fruity_pancakes.jpg",
-			"description":""
-		},	
-			{
-			"title":"Sourdough Granola American Pancakes with Fresh Blueberries",
-			"img":"./images/gallery/granola_sd_pancakes.jpg",
-			"description":""
+			"id":"7",
+			"title":"American Style Pancakes with Berry Maple Syrup",
+			"img":"./images/gallery/fruity_pancakes.jpg"
 		},	
 		{
-			
-			"title":"Green Tea Salmon with Vegetable Rice",
-			"img":"./images/gallery/green_tea_salmon.jpg",
-			"description":""
+			"id":"8",
+			"title":"Sourdough American Pancakes with Granola and Fresh Blueberries",
+			"img":"./images/gallery/granola_sd_pancakes.jpg"
+		},	
+		{
+			"id":"9",
+			"title":"Salmon simmered in green tea broth with Vegetable Fried Rice",
+			"img":"./images/gallery/green_tea_salmon.jpg"
 		},		
 		{
-			
-			"title":"Miso Glazed salmon with Shiitake Mushroom Brown Rice",
-			"img":"./images/gallery/miso_salmon.jpg",
-			"description":""
+			"id":"10",
+			"title":"Miso Glazed Salmon with Shiitake Mushroom fried Brown Rice",
+			"img":"./images/gallery/miso_salmon.jpg"
 		},		
 		{
-			
+			"id":"11",
 			"title":"Pierogi - Polish Dumplings with Minced Pork",
-			"img":"./images/gallery/pierogi.jpg",
-			"description":""
+			"img":"./images/gallery/pierogi.jpg"
 		},	
-			{
+		{
+			"id":"12",
 			"title":"White Sourdough Bread",
-			"img":"./images/gallery/sourdough.jpg",
-			"description":""
+			"img":"./images/gallery/sourdough.jpg"
 		},	
-			{
-				
-			"title":"T-Bone Steak with Dauphinoise Potatoes",
-			"img":"./images/gallery/steak.jpg",
-			"description":""
+		{
+			"id":"13",	
+			"title":"T-Bone Steak and Dauphinoise Potatoes",
+			"img":"./images/gallery/steak.jpg"
 		},		
 		{
-			
+			"id":"14",
 			"title":"Teryiaki Chicken With Rice and Fried Veg",
-			"img":"./images/gallery/teryiaki_chicken.jpg",
-			"description":""
+			"img":"./images/gallery/teryiaki_chicken.jpg"
 		},		
 		{
-			
+			"id":"15",
 			"title":"Tonkatsu with Homemade Tonkatsu Sauce, Fresh Veg and Butter Fried Garlic",
-			"img":"./images/gallery/tonkatsu.jpg",
-			"description":""
+			"img":"./images/gallery/tonkatsu.jpg"
 		},		
 		{
-			
-			"title":"Vanila and White Chocolate Panacotta with Blackberry Sauce Meringue and Amaretti Biscuits",
-			"img":"./images/gallery/vanilla__wht_choc_panacotta.jpg",
-			"description":""
+			"id":"16",
+			"title":"Vanilla and White Chocolate Panacotta with Blackberry Sauce Meringue and Amaretti Biscuits",
+			"img":"./images/gallery/vanilla__wht_choc_panacotta.jpg"
 		},		
 		{
-			
+			"id":"17",
 			"title":"Vanilla Banana Panacotta with Berry Sauce and Lemon Sorbet",
-			"img":"./images/gallery/white_choc_panacotta_sorbet.jpg",
-			"description":""
+			"img":"./images/gallery/white_choc_panacotta_sorbet.jpg"
 		},		
 		{
-			
-			"title":"Chicken Wings and Green Tea-Stained Ramen",
-			"img":"./images/gallery/wings_ramen.jpg",
-			"description":""
+			"id":"18",
+			"title":"Chicken Wings Ramen and Green Tea-Stained egg",
+			"img":"./images/gallery/wings_ramen.jpg"
 		}
 	] 
 }
