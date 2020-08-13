@@ -1,5 +1,13 @@
-@media only screen and (min-width: 300px){
+@keyframes appear{
+	0%{opacity: 0;}
+	100%{opacity: 1;}
+}
+@keyframes disappear{
+	0%{opacity: 1;}
+	100%{opacity: 0;}
+}
 
+@media only screen and (min-width: 300px){
 	.spices__background{
 		position: relative;
 		width: 100%;
@@ -13,14 +21,36 @@
 		object-fit: cover;
 		opacity: 0.5;
 	}
-	.spices__background h1{
-		font-size: 1.8rem;
-		text-align: center;
+	.black-transparent-background{
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+		background-color: rgba(0, 0, 0, 0.7);
+		display: none;
+		cursor: pointer;
+		align-items: center;
+		justify-content: center;
+		flex-direction: column;
+	}
+	.image__bigger{
+		border: 3px solid black;
+		width: 250px;
+		height: 250px;
+		object-fit: cover;
+		opacity: 0;
+	}
+	.image__title{
+		margin-top: 6rem;
+		margin-bottom: 1rem;
 		color: white;
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		text-shadow: 2px 2px 5px black;
-		transform: translateY(-150%);
-		padding: 0.5rem 1rem;
+		width: 250px;
+		text-align: center;
+	}
+	.image__description{
+		color: white;
+
 	}
 	.main__gallery{
 		gap: 2rem;
@@ -29,6 +59,7 @@
 		grid-template-columns: repeat(auto-fit, 150px);
 		justify-content: center;
 		margin-top: 3rem;
+		margin-bottom: 3rem;
 		border-top: 0;
 		height: auto;
 		width: 100%;
@@ -45,16 +76,16 @@
 	}
 
 }
-
-@media only screen and (min-width: 400px){
-	.spices__background h1{
-		padding: 0.5rem 1.5rem;
+@media only screen and (min-width: 500px){
+	.image__bigger{
 		width: 350px;
-		margin-right: auto;
-		margin-left: auto;
+		height: 350px;
+	}
+	.image__title{
+		font-size: 1.1rem;
+		width: 350px;
 	}
 }
-
 
 @media only screen and (min-width: 715px){
 	.main__gallery{
@@ -65,14 +96,17 @@
 		width: 200px;
 		height: 200px;
 	}
+	.image__bigger{
+		width: 400px;
+		height: 400px;
+	}
+	.image__title{
+		font-size: 1.2rem;
+		width: 300px;
+	}
 }
 
 @media only screen and (min-width: 900px){
-	.spices__background h1{
-		width: 550px;
-		transform: translateY(-200%);
-	}
-	
 	.main__gallery{
 		grid-template-rows: repeat(auto-fit, 250px);
 		grid-template-columns: repeat(auto-fit, 250px);
@@ -87,10 +121,15 @@
 	.spices__background{
 		height: 300px;
 	}
-	.spices__background h1{
-		padding: 0.5rem 1.5rem;
-		width: 700px;
-		font-size: 2.5rem;
+	.image__bigger{
+		width: 600px;
+		height: 600px;
+	}
+	.image__title{
+		margin-top: 4rem;
+		margin-bottom: 1.5rem;
+		width: 400px;
+		font-size: 1.3rem;
 	}
 }
 @media only screen and (min-width: 1800px){
