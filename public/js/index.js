@@ -1,24 +1,19 @@
-const desc = document.querySelectorAll('.recipe__description')
-const descArray = Array.from(desc);
-const copyrights = document.getElementById('copyrights')
-const randomGallery = document.querySelectorAll('.recipe__image')
-const scrollTop = document.getElementById('scroll__top');
-const displayGallery = document.querySelector('.display__gallery')
+const copyrights = document.getElementById("copyrights")
+const randomGallery = document.querySelectorAll(".recipe__container")
+const scrollTop = document.getElementById("scroll__top");
+const displayGallery = document.querySelector(".display__gallery")
 let date = new Date;
 let year = date.getFullYear();
 copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`
+const recipeTitle = document.querySelector(".recipe__title")
 
-
-window.addEventListener('scroll', () => {
+window.addEventListener("scroll", () => {
 	if(displayGallery.getBoundingClientRect().bottom < 500){
-		scrollTop.style.display = 'flex';
+		scrollTop.style.display = "flex";
 	} else {
-		scrollTop.style.display = 'none';
+		scrollTop.style.display = "none";
 	}
 })
-
-
-
 
 class Gallery {
 	async getImages(){
@@ -29,8 +24,7 @@ class Gallery {
 			recipes = recipes.map(item => {
 				const {img} = item;
 				const {title} = item;
-				const {description} = item;
-				return{img, title, description};
+				return{img, title};
 			}) 		
 			return recipes;
 		} catch (error) {
@@ -49,7 +43,10 @@ class GalleryShow {
 				recipes = [...usedRecipes];
 				usedRecipes = [];
 			} else {
-				let result = `<img class='random__recipes' src=${randomRecipe.img} />`;
+				let result = `<div class="recipe__image">
+				<img class="random__recipes" src=${randomRecipe.img} /></div>
+				<span class="recipe__title">${randomRecipe.title}</span>
+				`;
 				recipe.innerHTML = result;
 				let usedRecipe = recipes.splice(randomIndex, 1);
 				usedRecipes.push(usedRecipe);
@@ -58,7 +55,7 @@ class GalleryShow {
 	}
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
 	const galleryImages = new Gallery();
 	const galleryShow = new GalleryShow();
 	
@@ -67,86 +64,18 @@ document.addEventListener('DOMContentLoaded', () => {
 	}) 
 })
 
-
-
 const backgrounds = [
-	['rgb(198, 198, 198)'],
-	['rgb(216, 216, 216)'],
-	['rgb(171, 171, 171)'],
-	['rgb(232, 232, 232)'],
-	['rgb(185, 185, 185)'],
-	['rgb(203, 203, 203)']
+	["rgb(198, 198, 198)"],
+	["rgb(216, 216, 216)"],
+	["rgb(171, 171, 171)"],
+	["rgb(232, 232, 232)"],
+	["rgb(185, 185, 185)"],
+	["rgb(203, 203, 203)"]
 ]
 
 function randomBackground(){
-	descArray.forEach(desc => {
-		desc.style.background = backgrounds[Math.floor(Math.random() * backgrounds.length)]
+	randomGallery.forEach(title => {
+		title.style.background = backgrounds[Math.floor(Math.random() * backgrounds.length)]
 	});
 }
 randomBackground();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// async function getCaloriesValue() {
-// 	try {
-// 		let result = await fetch("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/9263/information?amount=100&unit=gram", {
-// 			"method": "GET",
-// 			"headers": {
-// 				"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-// 				"x-rapidapi-key": "742c3e4d47msh13052978aa4cb25p129a2fjsn1c21c1c5ad9c"
-// 			}
-// 		})
-// 		let data = await result.json();
-
-// 		return console.log(data);
-	
-	
-// 	} catch(err) {
-// 		console.log(err);
-// 	};
-// }
-// getCaloriesValue();
-
-
-
-
