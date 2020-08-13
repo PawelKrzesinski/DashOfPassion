@@ -3,17 +3,18 @@ const date = new Date;
 const year = date.getFullYear();
 const recipesCard = document.querySelector('.recipes');
 const categories = Array.from(document.querySelectorAll('.recipe__category'));
-const categoriesContainer = document.querySelector('.category__container');
 const goBackBtn = document.querySelector('.go__back');
-const header = document.querySelector('.recipes__header');
 const scrollTop = document.getElementById('scroll__top');
 const input = document.getElementById('input__search');
 const searchBtn = document.getElementById('search__button');
 const amountChoiceBtns = Array.from(document.querySelectorAll('.amount__choice'));
 const amountChoiceActive = document.querySelector('.amount__choice--active');
 const recipePages = document.querySelector('.recipe__pages');
-let amountChoice = parseInt(amountChoiceActive.value);
 const spinner = document.querySelector('.spinner');
+const searchContainers = document.querySelector(".search__containers");
+const categoryNames = Array.from(document.querySelectorAll('.category__name'));
+let amountChoice = parseInt(amountChoiceActive.value);
+let pagesBuilt = false;
 
 function chooseRecipeAmount(){
 	amountChoiceBtns.forEach(button => {
@@ -30,58 +31,31 @@ function chooseRecipeAmount(){
 }
 chooseRecipeAmount();
 
-input.addEventListener('keyup', (event) => {
+input.addEventListener('keyup', (category) => {
 	if(event.keyCode === 13){
-		const url = `https://edamam-recipe-search.p.rapidapi.com/search?q=${input.value}`;	
-		fetch(url , {
-			"method": "GET",
-			"headers": {
-				"x-rapidapi-host": "edamam-recipe-search.p.rapidapi.com",
-				"x-rapidapi-key": `${API_KEY}`
-			}
-		})
-		.then(response => {
-			const data = response.json();
-			return data;
-		}).then(data => {
-			const recipes = Array.from(data.hits);	
-			let result = ' ';
-			recipes.forEach(recipe => {
-				const recipeImg = recipe.recipe.image;
-				const recipeName = recipe.recipe.label;
-				const recipeURL = recipe.recipe.url;
-				const recipeCalories = recipe.recipe.calories;
-				const recipeSource = recipe.recipe.source;
-				result += `
-					<div class="recipe__box">
-							<div class="recipe__image"><a href="${recipeURL}" target=__blank"><img src='${recipeImg}'/></a></div>
-							<div class="recipe__description">
-								<h5 class="recipe__title">${recipeName}</h5> 
-								<h6>Total Calories: ${Math.round(recipeCalories)} kCal</h6>
-								<h6>Check the recipe <a href="${recipeURL}" target=__blank"><b>>HERE<</b></a></h6>
-								<h6>Recipe Source: ${recipeSource} </h6>
-								</div>
-						</div>		`
-			})
-			recipesCard.innerHTML = result;
-			randomBackground();
-			categoriesContainerDisappear();
-			setTimeout(recipesCardAppear(), 
-			setTimeout(goBackBtnAppear(), 550)
-			, 500);
-			input.value = "";
-		})
-		.catch(err => {
-			console.log(err);
-		});	
-				
+		category = input.value;
+		searchContainersDisappear();
+		setTimeout(recipesCardAppear(), 500);
+		setTimeout(goBackBtnAppear(), 550);
+		spinner.style.display = "block"
+		getRecipes(category)
+		input.value = "";
 	}
+	
+});
+
+searchBtn.addEventListener('click', (category) => {
+		category = input.value;
+		searchContainersDisappear();
+		setTimeout(recipesCardAppear(), 500);
+		setTimeout(goBackBtnAppear(), 550);
+		spinner.style.display = "block"
+		getRecipes(category)
+		input.value = "";
 })
-
-let pagesBuilt = false;
-
+	
 function getRecipes(category){
-	const categorySearch = category.alt;
+	const categorySearch = category.alt || category.id || category;
 	let data = {
 		categoryChoice: categorySearch
 	}
@@ -111,9 +85,8 @@ function getRecipes(category){
 			  calories: item.recipe.calories,
 			  source: item.recipe.source
 			};
-		  });
+		});
 			
-
 		function createAllButtons(){
 			const amountOfPages = 100/parseInt(amountChoice);	
 			for(let i = 0;i < amountOfPages; i++){
@@ -168,7 +141,7 @@ function getRecipes(category){
 			recipePagesBtns.forEach(button => {button.classList.remove("recipe__page-active")});
 			recipesCardDisappear();
 			goBackBtnDisappear();
-			setTimeout(categoriesContainerAppear(), 500);
+			setTimeout(searchContainersAppear(), 500);
 			while(recipePages.firstChild){
 				 recipePages.firstChild.remove();
 			}
@@ -177,7 +150,7 @@ function getRecipes(category){
 				box.remove();
 			})
 			recipesCard.innerHTML = "<img src=\"./images/Spinner.gif\" alt=\"\" class=\"spinner\"></img>"
-			
+			pagesBuilt = false;
 		})
 
 		if(!pagesBuilt) changePage();
@@ -194,7 +167,17 @@ function getRecipes(category){
 categories.forEach(category => {
 	category.addEventListener('click', () => {
 	getRecipes(category);
-	categoriesContainerDisappear();
+	searchContainersDisappear();
+	setTimeout(recipesCardAppear(), 500);
+	setTimeout(goBackBtnAppear(), 550);
+	})
+	spinner.style.display = "block"
+})
+
+categoryNames.forEach(category => {
+	category.addEventListener('click', () => {
+	getRecipes(category);
+	searchContainersDisappear();
 	setTimeout(recipesCardAppear(), 500);
 	setTimeout(goBackBtnAppear(), 550);
 	})
@@ -220,17 +203,19 @@ function recipesCardAppear(){
 		recipesCard.style.display = "grid";
 	},500)
 }
-function categoriesContainerDisappear(){
-	categoriesContainer.style.animation = "disappear 0.5s linear";
+
+function searchContainersAppear(){
+	searchContainers.style.animation = "appear 0.5s linear";
 	setTimeout( () => {
-		categoriesContainer.style.display = "none"
-	},500)
+		searchContainers.style.display = "block"
+	},500);
 }
-function categoriesContainerAppear(){
-	categoriesContainer.style.animation = "appear 0.5s linear";
+
+function searchContainersDisappear(){
+	searchContainers.style.animation = "disappear 0.5s linear";
 	setTimeout( () => {
-		categoriesContainer.style.display = "grid"
-	},500)
+		searchContainers.style.display = "none"
+	},500);
 }
 
 function goBackBtnDisappear(){
@@ -257,11 +242,11 @@ function randomBackground(){
 }
 
 window.addEventListener('scroll', () => {
-	if(header.getBoundingClientRect().bottom < 200){
+	if(recipesCard.getBoundingClientRect().top < 0){
 		scrollTop.style.display = 'flex';
 	} else {
 		scrollTop.style.display = 'none';
 	}
 })
 
-copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`
+copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`;
