@@ -61,8 +61,7 @@ input.addEventListener('keyup', (event) => {
 								<h6>Check the recipe <a href="${recipeURL}" target=__blank"><b>>HERE<</b></a></h6>
 								<h6>Recipe Source: ${recipeSource} </h6>
 								</div>
-						</div>
-					`
+						</div>		`
 			})
 			recipesCard.innerHTML = result;
 			randomBackground();
@@ -178,9 +177,8 @@ function getRecipes(category){
 				box.remove();
 			})
 			recipesCard.innerHTML = "<img src=\"./images/Spinner.gif\" alt=\"\" class=\"spinner\"></img>"
+			
 		})
-
-
 
 		if(!pagesBuilt) changePage();
 		recipesCard.innerHTML = result;
@@ -200,12 +198,8 @@ categories.forEach(category => {
 	setTimeout(recipesCardAppear(), 500);
 	setTimeout(goBackBtnAppear(), 550);
 	})
-	
 	spinner.style.display = "block"
-	
 })
-
-
 
 function createButton(){
 	const pages = document.createElement('div');
@@ -269,7 +263,5 @@ window.addEventListener('scroll', () => {
 		scrollTop.style.display = 'none';
 	}
 })
-
-
 
 copyrights.innerHTML = `&copy; Copyright ${year}, Dash of Passion!`
