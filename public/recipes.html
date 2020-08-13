@@ -19,63 +19,64 @@
 			<button class="navbar__recipes"><a href="recipes.html" class="active">RECIPES</a></button>
 		</div>
 	</div>
-	<h3 class="recipes__header">I love cooking at home, coming up with new ideas, new dishes. It feels great when the aroma of the
-			 fantastic food you just finished cooking is filling your house! That's why i created this search engine, so you can create
-			many great dishes !</h3>
-	<h4 id="input__search__instruction">Choose a category or search by ingredient. Separate ingredients with commas.</h4>
-	<div id="search__container">
-		<input type="text" id="input__search" placeholder="Chicken,pineapple etc..."/>
-		<button id="search__button">
-			<i class="fas fa-search"></i>
-		</button>
+	<div class="search__containers">
+		<h4 id="input__search__instruction">Choose a category or search by ingredient. Separate ingredients with commas.</h4>
+		<div id="search__container">
+			<input type="text" id="input__search" placeholder="Chicken,pineapple etc..."/>
+			<button id="search__button">
+				<i class="fas fa-search"></i>
+			</button>
 
-	</div>
-	<h4 id="items__per__page__text">Choose how many recipes per page you wish to see:</h4>
-	<div id="items__per__page__container">
-		<button class="amount__choice amount__choice--active" value="10">10</button>
-		<button class="amount__choice" value="25">25</button>
-		<button class="amount__choice" value="50">50</button>
-	</div>
-	<div class="category__container">
-		<div class="category__image__container">				
-			<img src="./images/roast-pork.jpg" alt="pork" class="recipe__category">
-			<h4>PORK<br>RECIPES</h4>
 		</div>
-		<div class="category__image__container">				
-			<img src="./images/chicken.jpg" alt="chicken" class="recipe__category">
-			<h4>CHICKEN<br>RECIPES</h4>
+		<div class="amount__choice__container">
+			<h4 id="items__per__page__text">Choose how many recipes per page you wish to see:</h4>
+			<div id="items__per__page__container">
+				<button class="amount__choice amount__choice--active" value="10">10</button>
+				<button class="amount__choice" value="25">25</button>
+				<button class="amount__choice" value="50">50</button>
+			</div>
 		</div>
-		<div class="category__image__container">				
-			<img src="./images/meat.jpg" alt="beef" class="recipe__category">
-			<h4>BEEF<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/goulash.jpg" alt="stew" class="recipe__category">
-			<h4>STEW<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/pasta.jpg" alt="pasta" class="recipe__category">
-			<h4>PASTA<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/soup.jpg" alt="soup" class="recipe__category">
-			<h4>SOUP<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/salad.jpg" alt="salad" class="recipe__category">
-			<h4>SALAD<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/rub.jpg" alt="rub" class="recipe__category">
-			<h4>RUB<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/bread.jpg" alt="bread" class="recipe__category">
-			<h4>BREAD<br>RECIPES</h4>
-		</div>
-		<div class="category__image__container">				
-			<img src="./images/nougat.jpg" alt="desserts" class="recipe__category">
-			<h4>DESSERTS<br>RECIPES</h4>
+		<div class="category__container">
+			<div class="category__image__container">				
+				<img src="./images/roast-pork.jpg" alt="pork" class="recipe__category">
+				<h4 class="category__name" id="pork">PORK<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/chicken.jpg" alt="chicken" class="recipe__category">
+				<h4 class="category__name" id="chicken">CHICKEN<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/meat.jpg" alt="beef" class="recipe__category">
+				<h4 class="category__name" id="beef">BEEF<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/goulash.jpg" alt="stew" class="recipe__category">
+				<h4 class="category__name" id="stew">STEW<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/pasta.jpg" alt="pasta" class="recipe__category">
+				<h4 class="category__name" id="pasta">PASTA<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/soup.jpg" alt="soup" class="recipe__category">
+				<h4 class="category__name" id="soup">SOUP<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/salad.jpg" alt="salad" class="recipe__category">
+				<h4 class="category__name" id="salad">SALAD<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/rub.jpg" alt="rub" class="recipe__category">
+				<h4 class="category__name" id="rub">RUB<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/bread.jpg" alt="bread" class="recipe__category">
+				<h4 class="category__name" id="bread">BREAD<br>RECIPES</h4>
+			</div>
+			<div class="category__image__container">				
+				<img src="./images/nougat.jpg" alt="desserts" class="recipe__category">
+				<h4 class="category__name" id="desserts">DESSERTS<br>RECIPES</h4>
+			</div>
 		</div>
 	</div>
 	<div class="recipes">
